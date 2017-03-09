@@ -17,7 +17,7 @@ module.exports = {
 	resolve: {
 		alias: {},
 		modules: [
-			'node_modules'
+			'node_modules', './src/components', './src/lib'
 		],
 	},
 	module: {

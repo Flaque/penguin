@@ -32,4 +32,15 @@ header h1 {
   padding: 10px;
   background: #eeeeee;
 }
+
+#root, .wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*# sourceMappingURL=index.map */
