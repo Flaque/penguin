@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Outline_Icons" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<g fill="green">
+	<path d="M11.5,0C5.159,0,0,5.159,0,11.5S5.159,23,11.5,23S23,17.841,23,11.5S17.841,0,11.5,0z M11.5,22C5.71,22,1,17.29,1,11.5   S5.71,1,11.5,1S22,5.71,22,11.5S17.29,22,11.5,22z" fill="green"/>
+	<path d="M17.5,11h-12C5.224,11,5,11.224,5,11.5S5.224,12,5.5,12h12c0.276,0,0.5-0.224,0.5-0.5S17.776,11,17.5,11z" fill="green"/>
+</g>
+</svg>

@@ -1,0 +1,63 @@
+{
+  "name": "penguin",
+  "productName": "Penguin",
+  "version": "0.0.0",
+  "description": "My polished app",
+  "license": "MIT",
+  "repository": "flaque/penguin",
+  "author": {
+    "name": "Flaqueeau",
+    "email": "econrad@zagmail.gonzaga.edu",
+    "url": "evanconrad.com"
+  },
+  "engines": {
+    "node": ">=7"
+  },
+  "electronVersion": "1.6.2",
+  "scripts": {
+    "test": "xo",
+    "build": "export NODE_ENV='production'; electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --all --version=$npm_package_electronVersion",
+    "build-sass": "node-sass --include-path src/styles --source-map index.map src/styles/index.scss index.css",
+    "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
+    "start": "export NODE_ENV='dev'; electron . & webpack --watch --progress --colors --output-source-map-file & npm run watch-sass"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app"
+  ],
+  "dependencies": {
+    "dropzone": "^4.3.0",
+    "electron-debug": "^0.2.1",
+    "fs-jetpack": "^0.12.0",
+    "imports-loader": "^0.7.1",
+    "rsvg": "^0.2.5",
+    "snapsvg": "^0.5.1",
+    "svg.js": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "browser-sync": "^2.9.6",
+    "browser-sync-webpack-plugin": "^1.0.0",
+    "css-loader": "^0.19.0",
+    "electron-packager": "^5.0.0",
+    "electron-prebuilt": "^0.34.0",
+    "node-sass": "^3.3.3",
+    "nodemon": "^1.7.0",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2",
+    "xo": "^0.9.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}

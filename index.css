@@ -1,0 +1,35 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+height: 100%;
+width: 100%; }
+
+header {
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -250px;
+  text-align: center; }
+
+header h1 {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0; }
+
+.foo {
+  background: #000; }
+
+
+#drops {
+  width: 100px;
+  height: 500px;
+  padding: 10px;
+  background: #eeeeee;
+}
+/*# sourceMappingURL=index.map */
