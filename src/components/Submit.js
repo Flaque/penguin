@@ -7,7 +7,7 @@ class Submit extends React.Component {
     return (
       <div className="box submit">
         <div className="content">
-          <button>Hi</button>
+          <button>Save</button>
         </div>
       </div>
     )

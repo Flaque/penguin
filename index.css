@@ -19,12 +19,15 @@ body {
   position: fixed;
   -webkit-app-region: drag; }
 
-#root, .wrapper {
+#root {
   height: 100%;
   width: 100%;
-  animation: fadein 0.5s; }
+  animation: fadein 0.5s;
+  display: flex; }
+  #root > * {
+    width: 100%; }
 
-.wrapper {
+.interaction-wrapper {
   float: right;
   display: flex;
   flex-direction: column;
@@ -33,22 +36,30 @@ body {
 
 .chrome-picker {
   box-shadow: none !important;
-  border: 1px solid #eee;
-  margin: 10px; }
+  border: 1px solid #eee; }
   .chrome-picker span {
     cursor: default; }
 
 .box {
-  margin: 10px;
-  margin-top: 0;
-  border: 1px solid #eee; }
+  border: 1px solid #ededed; }
   .box .content {
     padding: 16px 16px 12px; }
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 35px;
+  padding-top: 50px; }
 
 .submit {
   max-width: 225px;
   min-width: 225px;
-  box-sizing: initial; }
+  box-sizing: initial;
+  margin-top: 35px; }
+
+.drop {
+  width: 100%;
+  margin-right: 35px; }
 
 /*# sourceMappingURL=index.map */
 

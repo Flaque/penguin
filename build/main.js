@@ -17616,6 +17616,10 @@ var _Submit = __webpack_require__(455);
 
 var _Submit2 = _interopRequireDefault(_Submit);
 
+var _Drop = __webpack_require__(456);
+
+var _Drop2 = _interopRequireDefault(_Drop);
+
 var _penguinSvg = __webpack_require__(177);
 
 var _penguinSvg2 = _interopRequireDefault(_penguinSvg);
@@ -17666,12 +17670,17 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'wrapper', onDrop: this.handleFileDrop },
-        _react2.default.createElement(_reactColor.ChromePicker, {
-          color: this.state.color,
-          onChangeComplete: this.handleChangeComplete
-        }),
-        _react2.default.createElement(_Submit2.default, null)
+        { className: 'wrapper' },
+        _react2.default.createElement(_Drop2.default, null),
+        _react2.default.createElement(
+          'div',
+          { className: 'interaction-wrapper', onDrop: this.handleFileDrop },
+          _react2.default.createElement(_reactColor.ChromePicker, {
+            color: this.state.color,
+            onChangeComplete: this.handleChangeComplete
+          }),
+          _react2.default.createElement(_Submit2.default, null)
+        )
       );
     }
   }]);
@@ -43398,7 +43407,7 @@ var Submit = function (_React$Component) {
           _react2.default.createElement(
             'button',
             null,
-            'Hi'
+            'Save'
           )
         )
       );
@@ -43409,6 +43418,66 @@ var Submit = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Submit;
+
+/***/ }),
+/* 456 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(101);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Drop = function (_React$Component) {
+  _inherits(Drop, _React$Component);
+
+  function Drop() {
+    _classCallCheck(this, Drop);
+
+    return _possibleConstructorReturn(this, (Drop.__proto__ || Object.getPrototypeOf(Drop)).apply(this, arguments));
+  }
+
+  _createClass(Drop, [{
+    key: 'handleFileDrop',
+    value: function handleFileDrop(ev) {
+      var path = ev.dataTransfer.files[0].path;
+      console.log(path);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'box drop', onDrop: this.handleFileDrop },
+        _react2.default.createElement('div', { className: 'content' })
+      );
+    }
+  }]);
+
+  return Drop;
+}(_react2.default.Component);
+
+exports.default = Drop;
 
 /***/ })
 /******/ ]);

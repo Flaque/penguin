@@ -1,3 +1,5 @@
+$standard-padding: 35px;
+
 
 @keyframes fadein {
   from {
@@ -25,14 +27,18 @@ width: 100%;
   -webkit-app-region: drag;
 }
 
-#root, .wrapper {
+#root {
   height: 100%;
   width: 100%;
   animation: fadein 0.5s;
+  display: flex;
 
+  & > * {
+    width: 100%;
+  }
 }
 
-.wrapper {
+.interaction-wrapper {
   float:right;
   display: flex;
   flex-direction: column;
@@ -43,7 +49,6 @@ width: 100%;
 .chrome-picker {
   box-shadow: none !important; // Forgive me father for I have sinned
   border: 1px solid #eee;
-  margin: 10px;
 
   span {
     cursor: default;
@@ -51,18 +56,29 @@ width: 100%;
 }
 
 .box {
-  margin: 10px;
-  margin-top: 0;
-  border: 1px solid #eee;
+  border: 1px solid #ededed;
 
   .content {
     padding: 16px 16px 12px;
   }
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: $standard-padding;
+  padding-top: 50px;
+}
+
 .submit {
   max-width: 225px;
   min-width: 225px;
-      box-sizing: initial;
+  box-sizing: initial;
+  margin-top: $standard-padding;
+}
+
+.drop {
+  width: 100%;
+  margin-right: $standard-padding;
 }
 /*# sourceMappingURL=index.map */
