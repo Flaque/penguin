@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-height: 100%;
-width: 100%; }
+  height: 100%;
+  width: 100%; }
 
 header {
   position: absolute;
@@ -25,11 +25,12 @@ header h1 {
 .foo {
   background: #000; }
 
-
 #drops {
   width: 100px;
   height: 500px;
   padding: 10px;
-  background: #eeeeee;
-}
+  background: #eeeeee; }
+
+/*# sourceMappingURL=index.map */
+
 /*# sourceMappingURL=index.map */
