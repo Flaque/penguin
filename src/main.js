@@ -1,5 +1,8 @@
 import jetpack from 'fs-jetpack'
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 document.ondragover = document.ondrop = (ev) => {
   ev.preventDefault()
 }
@@ -9,8 +12,6 @@ document.body.ondrop = (ev) => {
   ev.preventDefault()
 
   let data = jetpack.read(path)
-
-  console.log(data, path)
 
   var parser = new DOMParser();
   var doc = parser.parseFromString(data, "application/xml");
@@ -22,3 +23,8 @@ document.body.ondrop = (ev) => {
 
   jetpack.write(path, svg.outerHTML)
 }
+
+ReactDOM.render(
+  <h1> hi there :D </h1>,
+  document.getElementById('root')
+)

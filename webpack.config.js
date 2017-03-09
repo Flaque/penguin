@@ -16,14 +16,14 @@ module.exports = {
 	},
 	resolve: {
 		alias: {},
-		modulesDirectories: [
+		modules: [
 			'node_modules'
 		],
 	},
 	module: {
 		loaders: [
 			{
-				test: /\.js/,
+				test: /\.(js|jsx)/,
 				loader: 'babel-loader',
 				exclude: /node_modules/
 			},
