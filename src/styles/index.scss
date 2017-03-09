@@ -1,46 +1,68 @@
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
 height: 100%;
-width: 100%; }
+width: 100%;
+-webkit-user-select: none;
+}
 
-header {
-  position: absolute;
-  width: 500px;
-  height: 250px;
-  top: 50%;
-  left: 50%;
-  margin-top: -125px;
-  margin-left: -250px;
-  text-align: center; }
-
-header h1 {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 60px;
-  font-weight: 100;
-  margin: 0;
-  padding: 0; }
-
-.foo {
-  background: #000; }
-
-
-#drops {
-  width: 100px;
-  height: 500px;
-  padding: 10px;
-  background: #eeeeee;
+#header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  -webkit-app-region: drag;
 }
 
 #root, .wrapper {
   height: 100%;
   width: 100%;
+  animation: fadein 0.5s;
+
 }
 
 .wrapper {
+  float:right;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.chrome-picker {
+  box-shadow: none !important; // Forgive me father for I have sinned
+  border: 1px solid #eee;
+  margin: 10px;
+
+  span {
+    cursor: default;
+  }
+}
+
+.box {
+  margin: 10px;
+  margin-top: 0;
+  border: 1px solid #eee;
+
+  .content {
+    padding: 16px 16px 12px;
+  }
+}
+
+.submit {
+  max-width: 225px;
+  min-width: 225px;
+      box-sizing: initial;
 }
 /*# sourceMappingURL=index.map */

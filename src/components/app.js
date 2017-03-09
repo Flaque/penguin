@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import jetpack from 'fs-jetpack'
 import { ChromePicker } from 'react-color'
+import Submit from 'Submit.js'
 import SVG from 'penguin-svg'
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
           color={ this.state.color }
           onChangeComplete={ this.handleChangeComplete }
         />
+        <Submit/>
       </div>
     )
   }

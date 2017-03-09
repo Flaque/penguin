@@ -1,12 +1,11 @@
 'use strict';
-const app = require('app');
-const BrowserWindow = require('browser-window');
+const electron = require('electron')
+const app = electron.app
+const BrowserWindow = electron.BrowserWindow
 
-// report crashes to the Electron project
-require('crash-reporter').start();
+console.log('electron v', process.versions.electron)
 
 // adds debug features like hotkeys for triggering dev tools and reload
-require('electron-debug')();
 var indexFile = `${__dirname}/index.html`;
 
 if (process.env['NODE_ENV'] == 'dev') {
@@ -27,16 +26,20 @@ function createMainWindow() {
 	const win = new BrowserWindow({
 		width: 600,
 		height: 400,
-		frame: false
+		titleBarStyle: 'hidden-inset',
+		show: false,
+		background: "#282828"
 	});
 
-	if (process.env['NODE_ENV'] == 'dev') {
+	if (process.env['NODE_ENV'] === 'dev') {
 		// we need to wait until browsersync is ready
 		setTimeout(function() {
-			win.loadUrl(indexFile);
+			console.log("booting up")
+			win.loadURL(indexFile);
+			win.show()
 		}, 5000);
 	} else {
-		win.loadUrl(`file:${indexFile}`);
+		win.loadURL(`file:${indexFile}`);
 	}
 
 
