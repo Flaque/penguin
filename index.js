@@ -28,7 +28,8 @@ function createMainWindow() {
 		height: 400,
 		titleBarStyle: 'hidden-inset',
 		show: false,
-		background: "#282828"
+		background: "white",
+		vibrancy: 'light'
 	});
 
 	if (process.env['NODE_ENV'] === 'dev') {

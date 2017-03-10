@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import jetpack from 'fs-jetpack'
-import { ChromePicker } from 'react-color'
 import Submit from 'Submit.js'
 import Drop from 'Drop.js'
+import ColorPicker from 'ColorPicker.js'
 import SVG from 'penguin-svg'
 
 class App extends React.Component {
@@ -19,9 +19,9 @@ class App extends React.Component {
       this.setState({ color: color.hex });
     }
 
-    this.handleFileDrop = this.handleFileDrop.bind(this)
   }
 
+  /*
   handleFileDrop(ev) {
     let path = ev.dataTransfer.files[0].path
     let string = jetpack.read(path)
@@ -32,18 +32,15 @@ class App extends React.Component {
 
     jetpack.write(path, svg.toString())
     ev.preventDefault()
-  };
+  }; */
 
   render() {
     return (
-      <div className="wrapper">
+      <div id="app">
         <Drop/>
 
-        <div className="interaction-wrapper" onDrop={ this.handleFileDrop }>
-          <ChromePicker
-            color={ this.state.color }
-            onChangeComplete={ this.handleChangeComplete }
-          />
+        <div className="interaction-wrapper">
+          <ColorPicker/>
           <Submit/>
         </div>
       </div>

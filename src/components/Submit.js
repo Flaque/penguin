@@ -5,10 +5,8 @@ class Submit extends React.Component {
 
   render() {
     return (
-      <div className="box submit">
-        <div className="content">
-          <button>Save</button>
-        </div>
+      <div className="submit">
+          <button className="link-like">Save</button>
       </div>
     )
   }

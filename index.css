@@ -27,12 +27,19 @@ body {
   #root > * {
     width: 100%; }
 
+#app {
+  display: flex;
+  flex-direction: column; }
+
 .interaction-wrapper {
   float: right;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end; }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: #282828;
+  height: 50px; }
 
 .chrome-picker {
   box-shadow: none !important;
@@ -40,26 +47,41 @@ body {
   .chrome-picker span {
     cursor: default; }
 
-.box {
-  border: 1px solid #ededed; }
-  .box .content {
-    padding: 16px 16px 12px; }
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 35px;
-  padding-top: 50px; }
-
-.submit {
-  max-width: 225px;
-  min-width: 225px;
-  box-sizing: initial;
-  margin-top: 35px; }
-
 .drop {
   width: 100%;
-  margin-right: 35px; }
+  height: 100%; }
+
+.combined-color .color-button {
+  width: 20px;
+  height: 20px;
+  background: red;
+  float: left;
+  border: 1px solid #d7d7d7;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  cursor: pointer; }
+
+.combined-color input {
+  height: 20px;
+  background: #353535;
+  border: none;
+  outline: none;
+  color: #d7d7d7;
+  padding-left: 5px;
+  font-size: 13px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+button.link-like {
+  font: menu;
+  background: none;
+  color: #2699F9;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.5s; }
+  button.link-like:hover {
+    color: #4dabf9; }
 
 /*# sourceMappingURL=index.map */
 
