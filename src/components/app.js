@@ -47,29 +47,31 @@ class App extends React.Component {
   }
 
   handleFileDrop(ev) {
-    let path = ev.dataTransfer.files[0].path
-    ev.preventDefault()
 
-    if (!isSVG(path)) throw "Path is not svg!"
+    // Handle each svg
+    _.values(ev.dataTransfer.files).forEach(({path}) => {
+      if (!isSVG(path)) throw "Path is not svg!"
 
-    let string = jetpack.read(path)
+      let string = jetpack.read(path)
 
-    // Change color
-    let svg = new SVG(string)
-    svg.fill(this.state.color)
+      // Change color
+      let svg = new SVG(string)
+      svg.fill(this.state.color)
 
-    this.setState((prevState) => {
-      prevState.svgs[path] = svg
-      return prevState
+      this.setState((prevState) => {
+        prevState.svgs[path] = svg
+        return prevState
+      })
     })
+
+    ev.preventDefault()
   };
 
   render() {
 
-    console.log(_.isEmpty(this.state.svgs))
     return (
       <div id="app">
-        <Drop handleFileDrop={this.handleFileDrop}/>
+        <Drop handleFileDrop={this.handleFileDrop} items={this.state.svgs}/>
 
         <div className="interaction-wrapper">
           <ColorPicker

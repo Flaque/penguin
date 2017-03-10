@@ -47,10 +47,6 @@ body {
   .chrome-picker span {
     cursor: default; }
 
-.drop {
-  width: 100%;
-  height: 100%; }
-
 .combined-color .color-button {
   width: 20px;
   height: 20px;
@@ -85,6 +81,17 @@ button.link-like {
   button.link-like:disabled {
     cursor: default;
     color: #aaa; }
+
+.drop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.empty-message {
+  font-family: Helvetica;
+  color: #aaa; }
 
 /*# sourceMappingURL=index.map */
 
