@@ -109,6 +109,12 @@ button.link-like {
   &:hover {
     color: #4dabf9;
   }
+
+  &:disabled {
+    cursor: default;
+    color: #aaa;
+  }
 }
+
 
 /*# sourceMappingURL=index.map */

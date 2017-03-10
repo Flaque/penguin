@@ -14,6 +14,7 @@
     "node": ">=7"
   },
   "scripts": {
+    "test": "jest",
     "build": "export NODE_ENV='production'; electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --all --version=$npm_package_electronVersion",
     "build-sass": "node-sass --include-path src/styles --source-map index.map src/styles/index.scss index.css",
     "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
@@ -26,12 +27,14 @@
   ],
   "dependencies": {
     "babel-core": "^6.23.1",
+    "babel-jest": "^19.0.0",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
     "dropzone": "^4.3.0",
     "electron-debug": "^0.2.1",
     "fs-jetpack": "^0.12.0",
     "imports-loader": "^0.7.1",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-color": "^2.11.3",
     "react-dom": "^15.4.2",

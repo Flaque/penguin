@@ -4,9 +4,11 @@ import jetpack from 'fs-jetpack'
 import Submit from 'Submit.js'
 import Drop from 'Drop.js'
 import ColorPicker from 'ColorPicker.js'
-import { isSVG } from 'file-utils.js'
+import { isSVG, baseName } from 'file-utils.js'
+import _ from 'lodash'
 import SVG from 'penguin-svg'
 
+const {dialog} = require('electron').remote
 
 class App extends React.Component {
 
@@ -29,8 +31,18 @@ class App extends React.Component {
   }
 
   write(ev) {
+    if (_.isEmpty(this.state.svgs)) {
+      throw "No SVG's to save!"
+    }
+
+    let outputFolders = dialog.showOpenDialog({
+      properties: ['openDirectory', 'createDirectory', 'promptToCreate'],
+      buttonLabel: "Export"
+    })
+
     for (let path in this.state.svgs) {
-      jetpack.write(path, this.state.svgs[path].toString())
+      let outputPath = `${outputFolders[0]}/${baseName(path)}`
+      jetpack.write(outputPath, this.state.svgs[path].toString())
     }
   }
 
@@ -53,6 +65,8 @@ class App extends React.Component {
   };
 
   render() {
+
+    console.log(_.isEmpty(this.state.svgs))
     return (
       <div id="app">
         <Drop handleFileDrop={this.handleFileDrop}/>
@@ -61,7 +75,7 @@ class App extends React.Component {
           <ColorPicker
               color={this.state.color}
               onColorChange={this.onColorChange}/>
-          <Submit onClick={this.write}/>
+          <Submit onClick={this.write} disabled={_.isEmpty(this.state.svgs)}/>
         </div>
       </div>
     )
