@@ -24,12 +24,14 @@ function onClosed() {
 
 function createMainWindow() {
 	const win = new BrowserWindow({
-		width: 600,
-		height: 400,
+		width: 400,
+		height: 600,
+		'min-height': 600,
+		'min-width': 400,
 		titleBarStyle: 'hidden-inset',
 		show: false,
-		background: "white",
-		vibrancy: 'light'
+		background: "#282828",
+		vibrancy: 'light',
 	});
 
 	if (process.env['NODE_ENV'] === 'dev') {

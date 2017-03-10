@@ -6,7 +6,7 @@ class Submit extends React.Component {
   render() {
     return (
       <div className="submit">
-          <button className="link-like">Save</button>
+          <button className="link-like" onClick={this.props.onClick}>Save</button>
       </div>
     )
   }

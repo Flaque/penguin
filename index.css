@@ -54,7 +54,6 @@ body {
 .combined-color .color-button {
   width: 20px;
   height: 20px;
-  background: red;
   float: left;
   border: 1px solid #d7d7d7;
   border-top-left-radius: 3px;
@@ -70,7 +69,8 @@ body {
   padding-left: 5px;
   font-size: 13px;
   border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px; }
+  border-bottom-right-radius: 3px;
+  max-width: 70px; }
 
 button.link-like {
   font: menu;

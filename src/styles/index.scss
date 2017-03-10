@@ -75,7 +75,6 @@ width: 100%;
   .color-button {
     width: 20px;
     height: $color-height;
-    background: red;
     float: left;
     border: 1px solid #d7d7d7;
     border-top-left-radius: $color-radius;
@@ -93,6 +92,7 @@ width: 100%;
     font-size: 13px;
     border-top-right-radius: $color-radius;
     border-bottom-right-radius: $color-radius;
+    max-width: 70px;
   }
 }
 
