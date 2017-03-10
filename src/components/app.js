@@ -24,10 +24,20 @@ class App extends React.Component {
       this.setState({
         color: event.target.value
       })
+      this.recolor()
     }
 
     this.handleFileDrop = this.handleFileDrop.bind(this)
     this.write = this.write.bind(this)
+    this.recolor = this.recolor.bind(this)
+  }
+
+  recolor() {
+    _.keys(this.state.svgs).forEach((key) => {
+      this.setState((prevState) => {
+        prevState.svgs[key].fill(this.state.color)
+      })
+    })
   }
 
   write(ev) {
@@ -63,6 +73,8 @@ class App extends React.Component {
         return prevState
       })
     })
+
+    this.recolor()
 
     ev.preventDefault()
   };

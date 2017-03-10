@@ -1,3 +1,26 @@
+function exists(item) {
+  return item !== "none" && item !== null
+}
+
+function colorPath(el, color) {
+  const defaultFill = el.getAttribute('fill')
+  const defaultStroke = el.getAttribute('stroke')
+
+  // If nothing's set, use the fill.
+  if (!exists(defaultFill) && !exists(defaultStroke)) {
+    el.setAttribute('fill', color)
+    return
+  } else if (exists(defaultFill)) {
+    el.setAttribute('fill', color)
+  }
+
+  if (exists(defaultStroke)) {
+    el.setAttribute('stroke', color)
+  }
+
+  return el
+}
+
 export default class {
 
   constructor(string) {
@@ -11,7 +34,15 @@ export default class {
    */
   fill(color) {
     Array.prototype.forEach.call(this._svg.querySelectorAll("*"), (el) => {
-      el.setAttribute('fill', color)
+
+      // Don't effect group nodes
+      if (el.nodeName === "g") return false
+
+      if (el.nodeName === "path" || el.nodeName === "line") {
+        el = colorPath(el, color)
+      } else {
+        el.setAttribute('fill', color)
+      }
     })
     return this
   }
