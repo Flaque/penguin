@@ -6,7 +6,7 @@ import Drop from 'Drop.js'
 import ColorPicker from 'ColorPicker.js'
 import { isSVG, baseName } from 'file-utils.js'
 import _ from 'lodash'
-import SVG from 'penguin-svg'
+import SVG from 'penguin-svg.js'
 
 const {dialog} = require('electron').remote
 
@@ -23,8 +23,9 @@ class App extends React.Component {
     this.onColorChange = (event) => {
       this.setState({
         color: event.target.value
+      }, () => {
+        this.recolor()
       })
-      this.recolor()
     }
 
     this.handleFileDrop = this.handleFileDrop.bind(this)
@@ -35,7 +36,8 @@ class App extends React.Component {
   recolor() {
     _.keys(this.state.svgs).forEach((key) => {
       this.setState((prevState) => {
-        prevState.svgs[key].fill(this.state.color)
+        prevState.svgs[key].current = SVG.coloredMarkup(
+            prevState.svgs[key].original, this.state.color)
       })
     })
   }
@@ -52,7 +54,7 @@ class App extends React.Component {
 
     for (let path in this.state.svgs) {
       let outputPath = `${outputFolders[0]}/${baseName(path)}`
-      jetpack.write(outputPath, this.state.svgs[path].toString())
+      jetpack.write(outputPath, this.state.svgs[path].current.outerHTML)
     }
   }
 
@@ -65,11 +67,11 @@ class App extends React.Component {
       let string = jetpack.read(path)
 
       // Change color
-      let svg = new SVG(string)
-      svg.fill(this.state.color)
+      let svg = SVG.parse(string)
+      let markup = SVG.coloredMarkup(svg, this.state.color)
 
       this.setState((prevState) => {
-        prevState.svgs[path] = svg
+        prevState.svgs[path] = {original: svg, current: markup}
         return prevState
       })
     })
@@ -81,9 +83,11 @@ class App extends React.Component {
 
   render() {
 
+    let displayItems = _.values(this.state.svgs).map(i => i.current)
+
     return (
       <div id="app">
-        <Drop handleFileDrop={this.handleFileDrop} items={this.state.svgs}/>
+        <Drop handleFileDrop={this.handleFileDrop} items={displayItems}/>
 
         <div className="interaction-wrapper">
           <ColorPicker

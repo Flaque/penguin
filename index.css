@@ -88,10 +88,19 @@ button.link-like {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .drop .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 35px;
+    max-height: 400px;
+    overflow-y: scroll; }
 
 .empty-message {
   font-family: Helvetica;
-  color: #aaa; }
+  color: #aaa;
+  cursor: default; }
 
 /*# sourceMappingURL=index.map */
 

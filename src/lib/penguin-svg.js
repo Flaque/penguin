@@ -1,25 +1,42 @@
+
+
+/**
+ * Returns true if the element has a stroke or
+ * the parent element has a stroke (which would trickle down)
+ */
 function hasDefinedStroke(el) {
 
   if (exists(el.parentNode.getAttribute('stroke'))) return true
   if (exists(el.getAttribute('stroke'))) return true
+  if (el.style.stroke) return true
 
   return false
 }
 
+/**
+ * Returns true if the element has a predefined "fill" attribute
+ */
 function hasDefinedFill(el) {
-  return exists(el.getAttribute('stroke'))
+  return exists(el.getAttribute('fill'))
 }
 
+/**
+ * Returns true if the property exists in SVG terms
+ */
 function exists(item) {
   return item !== "none" && item !== null
 }
 
+/**
+ * Color's a path element via stroke or fill.
+ * returns the elemnts
+ */
 function colorPath(el, color) {
   const defaultFill = el.getAttribute('fill')
   const defaultStroke = el.getAttribute('stroke')
 
   if (hasDefinedStroke(el)) {
-    el.setAttribute('stroke', color) // TODO Check if parent has stroke
+    el.style.stroke = color // Highest authority
     return
   }
 
@@ -34,40 +51,35 @@ function colorPath(el, color) {
   return el
 }
 
-export default class {
+/**
+ * Colors an element
+ */
+function colorElement(el, color) {
+  colorPath(el)
 
-  constructor(string) {
+  return el
+}
+
+/**
+ * Public exported functions
+ */
+export default {
+  parse(string) {
     const parser = new DOMParser()
     let doc = parser.parseFromString(string, "application/xml")
-    this._svg = doc.getElementsByTagName("svg")[0]
-  }
+    return doc.getElementsByTagName("svg")[0]
+  },
 
-  /**
-   * Fills the svg to a color
-   */
-  fill(color) {
-    Array.prototype.forEach.call(this._svg.querySelectorAll("*"), (el) => {
+  coloredMarkup(svg, color) {
 
-      // Don't effect group nodes
-      if (el.nodeName === "g") return false
+    // Create a clone to avoid effecting the object. (no side effects)
+    const clone = this.parse(svg.outerHTML)
 
-      if (el.nodeName === "path" || el.nodeName === "line") {
-        el = colorPath(el, color)
-      } else {
-        if (hasDefinedFill(el)) {
-          el.setAttribute('fill', color)
-        } else {
-          el.setAttribute('stroke', color)
-        }
-      }
+    Array.prototype.forEach.call(clone.querySelectorAll("*"), (el) => {
+      // if (el.nodeName === "g") return false
+      el = colorPath(el, color)
     })
-    return this
-  }
 
-  /**
-   * Returns the svg as a string
-   */
-  toString() {
-    return this._svg.outerHTML
+    return clone
   }
 }
