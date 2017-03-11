@@ -31,6 +31,7 @@ class App extends React.Component {
     this.handleFileDrop = this.handleFileDrop.bind(this)
     this.write = this.write.bind(this)
     this.recolor = this.recolor.bind(this)
+    this.clear = this.clear.bind(this)
   }
 
   recolor() {
@@ -79,7 +80,13 @@ class App extends React.Component {
     this.recolor()
 
     ev.preventDefault()
-  };
+  }
+
+  clear(ev) {
+    this.setState({
+      svgs: {}
+    })
+  }
 
   render() {
 
@@ -87,7 +94,7 @@ class App extends React.Component {
 
     return (
       <div id="app">
-        <Drop handleFileDrop={this.handleFileDrop} items={displayItems}/>
+        <Drop handleFileDrop={this.handleFileDrop} items={displayItems} onClear={this.clear}/>
 
         <div className="interaction-wrapper">
           <ColorPicker

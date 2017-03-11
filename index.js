@@ -3,15 +3,12 @@ const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
-console.log('electron v', process.versions.electron)
-
 // adds debug features like hotkeys for triggering dev tools and reload
 var indexFile = `${__dirname}/index.html`;
 
 if (process.env['NODE_ENV'] == 'dev') {
 	indexFile = "http://localhost:9999";
 }
-
 
 // prevent window being garbage collected
 let mainWindow;
@@ -32,6 +29,7 @@ function createMainWindow() {
 		vibrancy: 'light',
 		resizable: false,
 		fullscreenable: false,
+		title: "Penguin SVGs"
 	});
 
 	if (process.env['NODE_ENV'] === 'dev') {
@@ -40,7 +38,7 @@ function createMainWindow() {
 			console.log("booting up")
 			win.loadURL(indexFile);
 			win.show()
-		}, 5000);
+		}, 7000);
 	} else {
 		win.loadURL(`file:${indexFile}`);
 	}

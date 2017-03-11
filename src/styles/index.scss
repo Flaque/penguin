@@ -92,6 +92,12 @@ button.link-like {
     max-height: 400px;
     overflow-y:scroll;
   }
+
+  .clear {
+    position:fixed;
+    top: 40px;
+    right: 40px;
+  }
 }
 
 .empty-message {

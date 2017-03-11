@@ -27,7 +27,10 @@ class Drop extends React.Component {
               Drag and Drop <br/>
               SVG files here.
             </div>
-            : <div className="content"> {Items(this.props.items)} </div>
+            :  <div className="content">
+              <button className="clear link-like" onClick={this.props.onClear}>Clear</button>
+              {Items(this.props.items)}
+            </div>
           }
       </div>
     )

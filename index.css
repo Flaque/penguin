@@ -69,6 +69,10 @@ button.link-like {
     padding: 35px;
     max-height: 400px;
     overflow-y: scroll; }
+  .drop .clear {
+    position: fixed;
+    top: 40px;
+    right: 40px; }
 
 .empty-message {
   font-family: Helvetica;
