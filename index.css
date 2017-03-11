@@ -41,30 +41,6 @@ body {
   background: #282828;
   height: 50px; }
 
-.chrome-picker span {
-  cursor: default; }
-
-.combined-color .color-button {
-  width: 20px;
-  height: 20px;
-  float: left;
-  border: 1px solid #d7d7d7;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  cursor: pointer; }
-
-.combined-color input {
-  height: 20px;
-  background: #353535;
-  border: none;
-  outline: none;
-  color: #d7d7d7;
-  padding-left: 5px;
-  font-size: 13px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  max-width: 70px; }
-
 button.link-like {
   font: menu;
   background: none;

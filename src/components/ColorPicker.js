@@ -56,9 +56,10 @@ class ColorPicker extends React.Component {
       <div className="color-picker">
           {clicker(this)}
           <div className="combined-color">
-            <div className="color-button" style={style}
+            <button aria-label="Open Color Picker"
+              className="color-button" style={style}
               onClick={this.toggle}>
-            </div>
+            </button>
             <input type="text"
               value={this.props.color}
               className="right"

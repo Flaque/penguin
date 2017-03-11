@@ -12,3 +12,38 @@
   right: 0;
   z-index: 999;
 }
+
+.chrome-picker {
+  span {
+    cursor: default;
+  }
+}
+
+.combined-color {
+  $color-height: 20px;
+  $color-radius: 3px;
+
+  .color-button {
+    width: 20px;
+    height: $color-height;
+    float: left;
+    border: 1px solid #d7d7d7;
+    border-top-left-radius: $color-radius;
+    border-bottom-left-radius: $color-radius;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input {
+    height: $color-height;
+    background: #353535;
+    border: none;
+    outline: none;
+    color: #d7d7d7;
+    padding-left: 5px;
+    font-size: 13px;
+    border-top-right-radius: $color-radius;
+    border-bottom-right-radius: $color-radius;
+    max-width: 70px;
+  }
+}
