@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { ChromePicker } from 'react-color'
 import './ColorPicker.scss'
 
@@ -9,7 +10,7 @@ function clicker(self) {
 
   return (
     <div className="picker-wrapper" onClick={self.toggle}>
-      <ChromePicker color={self.props.color}
+      <ChromePicker color={self.props.color} key="chromepicker"
         onChange={self.onColorPickerChange}/>
     </div>
   )
@@ -54,7 +55,12 @@ class ColorPicker extends React.Component {
 
     return (
       <div className="color-picker">
+        <ReactCSSTransitionGroup
+          transitionName="left"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
           {clicker(this)}
+        </ReactCSSTransitionGroup>
           <div className="combined-color">
             <button aria-label="Open Color Picker"
               className="color-button" style={style}

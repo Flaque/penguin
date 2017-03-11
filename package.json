@@ -37,6 +37,7 @@
     "imports-loader": "^0.7.1",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
     "react-color": "^2.11.3",
     "react-dom": "^15.4.2",
     "rsvg": "^0.2.5",

@@ -1,16 +1,5 @@
 $standard-padding: 35px;
 
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 html,
 body {
   padding: 0;
@@ -30,7 +19,6 @@ width: 100%;
 #root {
   height: 100%;
   width: 100%;
-  animation: fadein 0.5s;
   display: flex;
 
   & > * {

@@ -2,6 +2,9 @@
   position: absolute;
   bottom: 77px;
   left: 10px; // Same padding as bottom elements
+  span {
+    cursor: default;
+  }
 }
 
 .picker-wrapper {
@@ -13,9 +16,26 @@
   z-index: 999;
 }
 
-.chrome-picker {
-  span {
-    cursor: default;
+.color-picker {
+  .left-enter {
+    opacity: 0.01;
+    left: -100px;
+  }
+
+  .left-enter.left-enter-active {
+    opacity: 1;
+    transition: all 300ms;
+    left: 0px;
+  }
+
+  .left-leave {
+    opacity: 1;
+  }
+
+  .left-leave.left-leave-active {
+    opacity: 0;
+    left: -100px;
+    transition: all 100ms;
   }
 }
 
