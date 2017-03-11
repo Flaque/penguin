@@ -20,9 +20,9 @@ class App extends React.Component {
       svgs: {}
     }
 
-    this.onColorChange = (event) => {
+    this.onColorChange = (color) => {
       this.setState({
-        color: event.target.value
+        color: color
       }, () => {
         this.recolor()
       })

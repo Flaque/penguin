@@ -41,11 +41,8 @@ body {
   background: #282828;
   height: 50px; }
 
-.chrome-picker {
-  box-shadow: none !important;
-  border: 1px solid #eee; }
-  .chrome-picker span {
-    cursor: default; }
+.chrome-picker span {
+  cursor: default; }
 
 .combined-color .color-button {
   width: 20px;
