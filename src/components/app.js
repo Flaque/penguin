@@ -11,6 +11,10 @@ import SVG from 'penguin-svg.js'
 
 const {dialog} = require('electron').remote
 
+function toPath(outputFolder, path, type) {
+  return setExtension(`${outputFolder}/${type}/${baseName(path)}`, type)
+}
+
 class App extends React.Component {
 
   constructor(props) {
@@ -55,15 +59,19 @@ class App extends React.Component {
     })
 
     for (let path in this.state.svgs) {
-      let outputPath = `${outputFolders[0]}/${baseName(path)}`
-      let pngPath = setExtension(outputPath, 'png')
       let svg = this.state.svgs[path].current
       let width = svg.width.baseVal.value
       let height = svg.height.baseVal.value
 
-      // svg to png
+      let pngPath = toPath(outputFolders[0], path, 'png')
+      let svgPath = toPath(outputFolders[0], path, 'svg')
+
+      // Save as a png
       svgTo.png(svg.outerHTML, pngPath,
         width, height)
+
+      // Save as SVG
+      jetpack.file(svgPath, {content: svg.outerHTML})
     }
   }
 
