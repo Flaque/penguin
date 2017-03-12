@@ -15,6 +15,21 @@ function toPath(outputFolder, path, type) {
   return setExtension(`${outputFolder}/${type}/${baseName(path)}`, type)
 }
 
+function exportSVG(outputFolder, path, svg) {
+  let width = svg.width.baseVal.value
+  let height = svg.height.baseVal.value
+
+  let pngPath = toPath(outputFolder, path, 'png')
+  let svgPath = toPath(outputFolder, path, 'svg')
+
+  // Save as a png
+  svgTo.png(svg.outerHTML, pngPath,
+    width, height)
+
+  // Save as SVG
+  jetpack.file(svgPath, {content: svg.outerHTML})
+}
+
 class App extends React.Component {
 
   constructor(props) {
@@ -60,18 +75,7 @@ class App extends React.Component {
 
     for (let path in this.state.svgs) {
       let svg = this.state.svgs[path].current
-      let width = svg.width.baseVal.value
-      let height = svg.height.baseVal.value
-
-      let pngPath = toPath(outputFolders[0], path, 'png')
-      let svgPath = toPath(outputFolders[0], path, 'svg')
-
-      // Save as a png
-      svgTo.png(svg.outerHTML, pngPath,
-        width, height)
-
-      // Save as SVG
-      jetpack.file(svgPath, {content: svg.outerHTML})
+      exportSVG(outputFolders[0], path, svg)
     }
   }
 
