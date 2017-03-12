@@ -4,7 +4,8 @@ import jetpack from 'fs-jetpack'
 import Submit from 'Submit.js'
 import Drop from 'Drop.js'
 import ColorPicker from 'ColorPicker/ColorPicker.js'
-import { isSVG, baseName } from 'file-utils.js'
+import { isSVG, baseName, setExtension } from 'file-utils.js'
+import svgTo from 'export-svg.js'
 import _ from 'lodash'
 import SVG from 'penguin-svg.js'
 
@@ -55,7 +56,14 @@ class App extends React.Component {
 
     for (let path in this.state.svgs) {
       let outputPath = `${outputFolders[0]}/${baseName(path)}`
-      jetpack.write(outputPath, this.state.svgs[path].current.outerHTML)
+      let pngPath = setExtension(outputPath, 'png')
+      let svg = this.state.svgs[path].current
+      let width = svg.width.baseVal.value
+      let height = svg.height.baseVal.value
+
+      // svg to png
+      svgTo.png(svg.outerHTML, pngPath,
+        width, height)
     }
   }
 
