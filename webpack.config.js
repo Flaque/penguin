@@ -2,10 +2,10 @@ var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-	entry: './src/main.js',
+	entry: './src/start.js',
 	output: {
-		path: __dirname + "/build",
-		filename: 'main.js'
+		path: __dirname + "/app",
+		filename: 'start.js'
 	},
 	devtool: 'source-map',
 	target: 'atom',
@@ -35,23 +35,10 @@ module.exports = {
 				test: /\.css$/,
 				loader: 'style-loader!css-loader'
 			},
-			{
-				test: require.resolve('snapsvg'),
-				loader: 'imports-loader?this=>window,fix=>module.exports=0'
-			},
 			{ test: /\.node$/, loader: 'node-loader' }
 		]
 	},
 	plugins: [
-		new webpack.IgnorePlugin(/vertx/),
-		new BrowserSyncPlugin({
-			host: 'localhost',
-			port: 9999,
-			open: false,
-			files: ['index.html','index.css', 'build/main.js'],
-			server: {
-				baseDir: ['.']
-			}
-		})
+		new webpack.IgnorePlugin(/vertx/)
 	]
 };

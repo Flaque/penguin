@@ -10,12 +10,14 @@
     "email": "econrad@zagmail.gonzaga.edu",
     "url": "evanconrad.com"
   },
+  "main": "./main.js",
   "engines": {
     "node": ">=7"
   },
   "scripts": {
     "test": "jest",
-    "build": "export NODE_ENV='production'; electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --all --version=$npm_package_electronVersion",
+    "dist": "node_modules/.bin/build",
+    "pack": "node_modules/.bin/build --dir",
     "build-sass": "node-sass --include-path src/styles --source-map index.map src/styles/index.scss index.css",
     "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
     "start": "export NODE_ENV='dev'; ./node_modules/.bin/electron . & webpack --watch & npm run watch-sass"
@@ -26,38 +28,47 @@
     "index.css"
   ],
   "dependencies": {
-    "babel-core": "^6.23.1",
-    "babel-jest": "^19.0.0",
-    "browser-sync": "^2.18.8",
-    "browser-sync-webpack-plugin": "^1.1.4",
-    "canvas": "^1.6.4",
     "canvg": "^0.0.8",
-    "css-loader": "^0.27.1",
     "dataurl": "^0.1.0",
-    "dropzone": "^4.3.0",
     "electron-debug": "^0.2.1",
     "fs-jetpack": "^0.12.0",
-    "imports-loader": "^0.7.1",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-color": "^2.11.3",
-    "react-dom": "^15.4.2",
-    "sass-loader": "^6.0.3",
-    "sharp": "^0.17.2",
-    "snapsvg": "^0.5.1",
-    "svg.js": "^2.4.0",
-    "webpack": "^2.2.1"
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "babel-loader": "^6.4.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "electron": "^1.6.2",
+    "electron-builder": "^15.4.3",
     "electron-packager": "^5.0.0",
     "node-loader": "^0.6.0",
     "node-sass": "^3.3.3",
     "nodemon": "^1.7.0",
-    "style-loader": "^0.13.2"
+    "style-loader": "^0.13.2",
+    "sass-loader": "^6.0.3",
+    "webpack": "^2.2.1",
+    "imports-loader": "^0.7.1",
+    "babel-core": "^6.23.1",
+    "babel-jest": "^19.0.0",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "css-loader": "^0.27.1"
+  },
+  "postinstall": "install-app-deps",
+  "build": {
+    "appId": "com.flaque.penguin",
+    "mac": {
+      "category": "public.app-category.graphics-design"
+    },
+    "files": [
+      "main.js",
+      "node_modules/**/*",
+      "app/**/*",
+      "package.json"
+    ]
   }
 }
