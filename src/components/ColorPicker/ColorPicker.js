@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import { ChromePicker } from 'react-color'
+import ColorPalette from 'ColorPalette/ColorPalette.js'
 import './ColorPicker.scss'
 
 
@@ -10,7 +10,7 @@ function clicker(self) {
 
   return (
     <div className="picker-wrapper" onClick={self.toggle}>
-      <ChromePicker color={self.props.color} key="chromepicker"
+      <ColorPalette color={self.props.color} key="picker"
         onChange={self.onColorPickerChange}/>
     </div>
   )
