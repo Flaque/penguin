@@ -49,7 +49,6 @@ function createMainWindow() {
 	    slashes: true,
 	  }));
 		win.show()
-		win.openDevTools()
 	}
 
 	win.on('closed', onClosed);
@@ -58,9 +57,7 @@ function createMainWindow() {
 }
 
 app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
 		app.quit();
-	}
 });
 
 app.on('activate-with-no-open-windows', () => {

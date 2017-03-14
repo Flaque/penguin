@@ -1,29 +1,36 @@
 # penguin
 
-> My polished app
+> A tool for recoloring and exporting SVG icons.
 
 
-## Dev
+![Screenshot](http://i.imgur.com/eWbBDq8.png)
+
+
+## features
+- Change the color of multiple SVG icons in seconds.
+- Exports SVG's to PNG's.
+
+### Setup
 
 ```
 $ npm install
 ```
 
-### Run
+### Run Dev
 
 ```
 $ npm start
 ```
 
-### Build
+### Build Production
 
 ```
-$ npm run build
+$ npm run dist
 ```
 
 Builds the app for OS X, Linux, and Windows, using [electron-packager](https://github.com/maxogden/electron-packager).
 
 
-## License
+## Made by
 
-MIT © [Flaqueeau](http://evanconrad.com)
+[@flaqueeau](https://twitter.com/flaqueeau)
