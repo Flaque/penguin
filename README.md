@@ -3,7 +3,7 @@
 > A tool for recoloring and exporting SVG icons.
 
 
-![Screenshot](http://i.imgur.com/eWbBDq8.png)
+![Screenshot](http://i.imgur.com/GFlbrmi.gif)
 
 
 ## features
