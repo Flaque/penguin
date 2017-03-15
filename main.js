@@ -1,13 +1,13 @@
 'use strict';
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
 // adds debug features like hotkeys for triggering dev tools and reload
 var indexFile = `${__dirname}/app/index.html`;
 
+// Turn off pinch to zoom.
+//
 // prevent window being garbage collected
 let mainWindow;
 
