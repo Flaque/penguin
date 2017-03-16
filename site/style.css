@@ -1,0 +1,50 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #282828;
+}
+
+.big-icon {
+  width: 18rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-top: 10rem;
+  flex-direction: column;
+}
+
+.header h1 {
+  /*margin: 0;*/
+}
+
+.penguin .container button.button-primary {
+  background-color: #00A0B0;
+  border-color: #00A0B0;
+}
+
+.penguin a {
+  color: #00A0B0;
+}
+
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
