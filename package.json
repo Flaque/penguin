@@ -63,13 +63,24 @@
   "build": {
     "appId": "com.flaque.penguin",
     "mac": {
+      "category": "public.app-category.graphics-design",
+      "target": ["pkg", "dmg", "zip", "mas", "mas-dev"],
+      "entitlements": "build/entitlements.mac.plist",
+      "identity":"F29L6XF84H",
+      "type": "distribution",
+      "icon": "build/icon.icns"
+    },
+    "mas" : {
+      "entitlements": "build/entitlements.mas.plist",
+      "type": "distribution",
       "category": "public.app-category.graphics-design"
     },
     "files": [
       "main.js",
       "node_modules/**/*",
       "app/**/*",
-      "package.json"
+      "package.json",
+      "embedded.provisionprofile"
     ]
   }
 }
