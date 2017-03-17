@@ -27,7 +27,7 @@ function createMainWindow() {
 		vibrancy: 'light',
 		resizable: false,
 		fullscreenable: false,
-		title: "Penguin SVGs",
+		title: "Penguin Icon Manager",
 		icon: path.join(__dirname, 'assets/logo/icon_32x32@2x.png')
 	});
 
@@ -48,7 +48,10 @@ function createMainWindow() {
 	    protocol: 'file:',
 	    slashes: true,
 	  }));
-		win.show()
+
+		win.once('ready-to-show', () => {
+			win.show()
+		})
 	}
 
 	win.on('closed', onClosed);
