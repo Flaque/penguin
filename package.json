@@ -18,9 +18,7 @@
     "test": "jest",
     "dist": "node_modules/.bin/build",
     "pack": "node_modules/.bin/build --dir",
-    "build-sass": "node-sass --include-path src/styles --source-map index.map src/styles/index.scss index.css",
-    "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
-    "start": "export NODE_ENV='dev'; ./node_modules/.bin/electron . & webpack --watch & npm run watch-sass",
+    "start": "export NODE_ENV='dev'; ./node_modules/.bin/electron . & webpack --watch",
     "release": "bash scripts/publish_penguin.sh"
   },
   "files": [

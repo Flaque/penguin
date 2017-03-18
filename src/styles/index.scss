@@ -62,36 +62,4 @@ button.link-like {
   }
 }
 
-.drop {
-  width: 100%;
-  height: 100%;
-
-  display:flex;
-  justify-content: center;
-  align-items: center;
-
-  .content {
-    display: flex;
-
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: $standard-padding;
-    max-height: 400px;
-    overflow-y:scroll;
-  }
-
-  .clear {
-    position:fixed;
-    top: 40px;
-    right: 40px;
-  }
-}
-
-.empty-message {
-  font-family: Helvetica;
-  color: #aaa;
-  cursor: default;
-}
-
 /*# sourceMappingURL=index.map */

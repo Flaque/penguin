@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
+import "./Drop.scss"
 
 function Items(items) {
   return items.map((svg, index) => {
