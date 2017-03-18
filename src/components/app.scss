@@ -1,0 +1,15 @@
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.interaction-wrapper {
+  float:right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: #282828;
+  height: 50px;
+}

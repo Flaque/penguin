@@ -1189,6 +1189,10 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -1700,10 +1704,6 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-dropzone@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/dropzone/-/dropzone-4.3.0.tgz#48b0b8f2ad092872e4b535b672a7c3f1a1d67c91"
-
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -1899,6 +1899,10 @@ electron@^1.6.2:
     electron-download "^3.0.1"
     extract-zip "^1.0.3"
 
+element-class@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/element-class/-/element-class-0.2.2.tgz#9d3bbd0767f9013ef8e1c8ebe722c1402a60050e"
+
 elliptic@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.0.tgz#cac9af8762c85836187003c8dfe193e5e2eae5df"
@@ -2030,10 +2034,6 @@ etag@^1.7.0:
 etag@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.7.0.tgz#03d30b5f67dd6e632d2945d30d6652731a34d5d8"
-
-eve@~0.5.1:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/eve/-/eve-0.5.3.tgz#6c2f6588f7d0b392044d245ba5af9d7cfe237f42"
 
 event-stream@~3.3.0:
   version "3.3.4"
@@ -3197,7 +3197,7 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.0:
+lodash@4.x.x, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.14.0, lodash@^4.16.1, lodash@^4.17.4, lodash@^4.2.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -4315,6 +4315,13 @@ react-addons-css-transition-group@^15.4.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+"react-addons-update@^0.14.0 || ^15.0.0":
+  version "15.4.2"
+  resolved "https://registry.yarnpkg.com/react-addons-update/-/react-addons-update-15.4.2.tgz#43a9578e3b46bc5f7eed2ba52560dd57a8aff918"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
+
 react-color@^2.11.3:
   version "2.11.4"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.11.4.tgz#43f64630e5d47a243f6bd35300224c9c69c73921"
@@ -4324,13 +4331,23 @@ react-color@^2.11.3:
     reactcss "^1.2.0"
     tinycolor2 "^1.1.2"
 
-react-dom@^15.4.2:
+"react-dom@^0.14.0 || ^15.0.0", react-dom@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
   dependencies:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+react-toastr@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/react-toastr/-/react-toastr-2.8.2.tgz#55bfe8a5b1adc7a09e9fa14ddf428575876f42e1"
+  dependencies:
+    classnames "^2.2.5"
+    element-class "^0.2.2"
+    lodash "^4.16.1"
+    react-addons-update "^0.14.0 || ^15.0.0"
+    react-dom "^0.14.0 || ^15.0.0"
 
 react@^15.4.2:
   version "15.4.2"
@@ -4810,12 +4827,6 @@ slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
 
-snapsvg@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/snapsvg/-/snapsvg-0.5.1.tgz#0caf52c79189a290746fc446cc5e863f6bdddfe3"
-  dependencies:
-    eve "~0.5.1"
-
 sntp@1.x.x:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/sntp/-/sntp-1.0.9.tgz#6541184cc90aeea6c6e7b35e2659082443c66198"
@@ -5066,10 +5077,6 @@ supports-color@^3.1.0, supports-color@^3.2.3:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
   dependencies:
     has-flag "^1.0.0"
-
-svg.js@^2.4.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/svg.js/-/svg.js-2.5.0.tgz#bc170c7bb37b71e754a1964a7e9036b3bec157d8"
 
 svgo@^0.7.0:
   version "0.7.2"

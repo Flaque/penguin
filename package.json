@@ -36,7 +36,8 @@
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-color": "^2.11.3",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-toastr": "^2.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -63,7 +64,12 @@
     "appId": "com.flaque.penguin",
     "mac": {
       "category": "public.app-category.graphics-design",
-      "target": ["pkg", "dmg", "zip", "mas"],
+      "target": [
+        "pkg",
+        "dmg",
+        "zip",
+        "mas"
+      ],
       "entitlements": "build/entitlements.mac.plist",
       "identity": "F29L6XF84H",
       "type": "distribution",
