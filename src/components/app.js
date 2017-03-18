@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import jetpack from 'fs-jetpack'
 import Submit from 'Submit/Submit.js'
 import Drop from 'Drop/Drop.js'
-import ColorPicker from 'ColorPicker/ColorPicker.js'
 import { isSVG, baseName, setExtension } from 'file-utils.js'
 import './app.scss'
 import svgTo from 'export-svg.js'
@@ -37,13 +36,13 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      color: "#282828",
+      color: "#D84A50",
       svgs: {}
     }
 
-    this.onColorChange = (color) => {
+    this.onColorChange = (event) => {
       this.setState({
-        color: color
+        color: event.target.value
       }, () => {
         this.recolor()
       })
@@ -118,9 +117,9 @@ class App extends React.Component {
         <Drop handleFileDrop={this.handleFileDrop} items={displayItems} onClear={this.clear}/>
 
         <div className="interaction-wrapper">
-          <ColorPicker
-              color={this.state.color}
-              onColorChange={this.onColorChange}/>
+          <input type="color"
+              value={this.state.color}
+              onChange={this.onColorChange}/>
           <Submit onClick={this.write} disabled={_.isEmpty(this.state.svgs)}/>
         </div>
       </div>
