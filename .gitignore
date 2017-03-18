@@ -2,3 +2,5 @@ node_modules
 /dist
 public
 *.provisionprofile
+/app/start.js
+/app/start.js.map
