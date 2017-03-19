@@ -2,6 +2,8 @@
 
 > A tool for recoloring and exporting SVG icons.
 
+Don't want to build from source? You can support the developer by getting Penguin [on the Mac App Store](https://itunes.apple.com/us/app/penguin-icon-manager/id1215872300?ls=1&mt=12). 
+
 
 ![Screenshot](http://i.imgur.com/GFlbrmi.gif)
 
